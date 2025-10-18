@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('content')
 <h1>
-    thiss isa laravel project
+    hello i am who i am
 </h1>
 @endsection
