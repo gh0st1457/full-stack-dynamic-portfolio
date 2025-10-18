@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
-this is home
-
-
+<h1>
+    skills
+</h1>
 
 @endsection
