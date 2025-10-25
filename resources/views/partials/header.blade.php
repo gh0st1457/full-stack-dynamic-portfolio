@@ -1,4 +1,4 @@
-
+<!-- 
 <style>
 .navbar {
     background-color: #ffffff;
@@ -67,7 +67,34 @@ a:hover {
 }
  
 </style>
- 
+
+
+body {
+    
+    padding-top: 64px; 
+    margin: 0; 
+    font-family: Arial, sans-serif; 
+    background-color: #f9fafb; 
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem; 
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    border: 4px solid #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    object-fit: cover; 
+}
+</style>
+</head>
+<body>
+
 <nav class="navbar">
     <div class="navbar-container">
         <div class="navbar-flex">
@@ -87,3 +114,9 @@ a:hover {
         </div>
     </div>
 </nav>
+<div class="profile-section">
+    <img src="
+</div>
+
+</body>
+</html> -->
