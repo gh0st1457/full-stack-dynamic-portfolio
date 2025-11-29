@@ -99,7 +99,7 @@ body {
     <div class="navbar-container">
         <div class="navbar-flex">
             <div class="navbar-div">
-                <a href="/">Nick-name</a>
+                <a href="/">Sami</a>
             </div>
  
             <div class="navbar-nav">
