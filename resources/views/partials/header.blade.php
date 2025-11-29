@@ -1,4 +1,4 @@
-<!-- 
+
 <style>
 .navbar {
     background-color: #ffffff;
@@ -119,4 +119,4 @@ body {
 </div>
 
 </body>
-</html> -->
+</html>
