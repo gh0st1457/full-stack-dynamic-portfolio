@@ -1,20 +1,31 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectInfoController;
 use App\Http\Controllers\AcademicInfoController;
+use App\Http\Controllers\ResumeController;
 
-Route::get('/', function () {
-    return view('pages.home');
-});
-Route::get('/skills', function () {
-    return view('pages.skills');
-});
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
 
-Route::middleware('auth')->group(function () {
-    Route::get('/projects', [ProjectInfoController::class, 'index']);
-    Route::get('/projects/store', [ProjectInfoController::class, 'store']);
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
 
-    Route::get('/academic-info', [AcademicInfoController::class, 'index']);
-    Route::get('/academic-info/store', [AcademicInfoController::class, 'store']);
-});
+// Projects list & single project detail
+Route::get('/projects', [ProjectInfoController::class, 'index'])
+    ->name('projects.index');
+
+Route::get('/projects/{slug}', [ProjectInfoController::class, 'show'])
+    ->name('projects.show');
+
+// Academic info page (study history + achievements)
+Route::get('/academic', [AcademicInfoController::class, 'index'])
+    ->name('academic.index');
+
+// Resume download – used by route('resume.download') in Blade
+Route::get('/resume/download', [ResumeController::class, 'download'])
+    ->name('resume.download');
