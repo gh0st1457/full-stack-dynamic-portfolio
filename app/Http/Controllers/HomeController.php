@@ -19,7 +19,7 @@ class HomeController extends Controller
         // 1. Define the missing variables first
         $featuredProjects = Project::where('is_featured', true)->get(); // Example query
         $skills = Skill::all();
-        $study = Study::all(); // or Education::all()
+        // $study = Study::all(); // or Education::all()
         $achievements = Achievement::all();
     
         // 2. Your existing Resume query
@@ -29,7 +29,7 @@ class HomeController extends Controller
         return view('home', compact(
             'featuredProjects',
             'skills',
-            'study',
+            // 'study',
             'achievements',
             'resume'
         ));

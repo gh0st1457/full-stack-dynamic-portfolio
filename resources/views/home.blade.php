@@ -1,21 +1,24 @@
 @extends('layouts.app')
 
-@section('title', 'Sami • Full‑Stack Portfolio')
+@section('title', 'Samiul • Full‑Stack Portfolio')
 
 @section('content')
 <section id="home" class="hero">
     <div class="container hero-grid">
         <div class="hero-left">
-            <h1>Hi, I'm Sami</h1>
+            <h1>Hi, I'm Samiul</h1>
 
             <p class="hero-about">
-                A CSE student passionate about nothing...only business 🤑
+                A CSE student passionate about full‑stack web development, deep learning for medical
+                imaging, and IoT projects like RC tanks and smart systems.
             </p>
 
             <div class="hero-buttons">
                 <a href="#projects" class="btn-primary">View Projects</a>
                 @if($resume)
-                    
+                    <a href="{{ route('resume.download') }}" class="btn-primary btn-outline">
+                        Download CV
+                    </a>
                 @endif
             </div>
         </div>
@@ -23,8 +26,8 @@
         <div class="hero-right">
             <div class="hero-avatar-wrap">
                 <img
-                    src="{{ asset('images/228546220.jpeg') }}"
-                    alt="Sami profile photo"
+                    src="{{ asset('images/481773494_3447077962266966_1117281271806353893_n.jpg') }}"
+                    alt="Samiul profile photo"
                     class="hero-avatar"
                 >
             </div>
@@ -158,7 +161,9 @@
                             <p class="timeline-text">{{ $ach->description }}</p>
                         @endif
                         @if($ach->certificate_url)
-                            
+                            <a href="{{ $ach->certificate_url }}" target="_blank" class="cert-link">
+                                View Certificate →
+                            </a>
                         @endif
                     </div>
                 </div>
@@ -171,13 +176,20 @@
 <section id="resume">
     <div class="container">
         <h2 class="section-title">CV / Resume</h2>
-        
+        @if($resume)
+            <p>{{ $resume->headline }}</p>
+            <a href="{{ route('resume.download') }}" class="btn-primary">
+                Download Latest CV
+            </a>
+        @else
+            <p>Resume will be uploaded soon.</p>
+        @endif
     </div>
 </section>
 
 <section id="contact">
     <div class="container">
-        <h2 class="section-title">Contact</h2>
+    <h2 class="section-title">Contact</h2>
         <p>Email: sami22205101457@diu.edu.bd</p>
         <p>Contact Number: 01873321375</p>
         <p>Facebook ID: Mimtaj Hossain Sami</p>
